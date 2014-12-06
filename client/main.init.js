@@ -1,7 +1,10 @@
 /* off-canvas sidebar toggle */
 
 
-$(document).ready(init);
+if(!Meteor.isCordova && Meteor.isClient)
+{
+    $(document).ready(init);
+}
 
 if (Meteor.isCordova) {
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -13,7 +16,7 @@ if (Meteor.isCordova) {
 
 function onDeviceReady() {
     sideBarInit();
-    
+    app.initPhoto();
 
 }
 
@@ -33,6 +36,4 @@ function init()
 {
   sideBarInit();
   app.init();
-
-
 }
