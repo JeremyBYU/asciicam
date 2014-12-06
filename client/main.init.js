@@ -12,7 +12,8 @@ if (Meteor.isCordova) {
 
 
 function onDeviceReady() {
-    init();
+    sideBarInit();
+    
 
 }
 

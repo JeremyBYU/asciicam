@@ -59,7 +59,12 @@ hr {
     padding: 20px;
 }
 .full {
-    padding-top: 70px;
+    padding-top: 30px;
+
+}
+.col-sm-9, .col-sm-8 {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 .box {
     bottom: 0;
@@ -228,13 +233,15 @@ small.text-muted {
         padding: 7px;
     }
     .full {
-        padding-top: 20px;
+        padding-top: 0px;
     }
     .navbar-blue {
         background-color: #3B5999;
         top: 0;
         width: 100%;
         position: relative;
+        margin-bottom: 0px;
+
     }
 }
 /*
