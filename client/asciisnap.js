@@ -8,6 +8,7 @@ app.initPhoto = function() {
     btnStart = document.getElementById('startbtn');
     btnStop = document.getElementById('stopbtn');
     photo = null;
+    image = new Image();
     //Init events
     btnStart.addEventListener('click', app.takePhoto);
     btnStop.addEventListener('click', app.stopCam);
@@ -32,9 +33,13 @@ app.takePhoto = function(e) {
     	}
     	else
     	{
-    		console.log(data);
+
+    		
     		//assign the photo the div
-			$("#photo").attr("src", data);
+			image.src = data;
+			app.createASCII(image)
+
+
 
     	}
     	
@@ -53,7 +58,7 @@ app.stopCam = function(e) {
 
 //The generation of the ascii text was taken from this great sample from thecodeplayer:
 //http://thecodeplayer.com/walkthrough/cool-ascii-animation-using-an-image-sprite-canvas-and-javascript
-app.loop = function() {
+app.createASCII = function(image) {
     var r, g, b, gray;
     var character, line = "";
 
@@ -61,7 +66,7 @@ app.loop = function() {
     canvasCtx.clearRect(0, 0, width, height);
 
     //draw the video frame
-    canvasCtx.drawImage(photo, 0, 0, width, height);
+    canvasCtx.drawImage(image, 0, 0, width, height);
 
     //accessing pixel data
     var pixels = canvasCtx.getImageData(0, 0, width, height);

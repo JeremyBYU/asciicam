@@ -1,0 +1,6 @@
+meteor deploy asciicam.meteor.com
+meteor build ~/asciicam --server=asciicam.meteor.com
+cd ~/asciicam/android
+jarsigner -digestalg SHA1 unaligned.apk asciicam
+
+~/.meteor/android_bundle/android-sdk/build-tools/20.0.0/zipalign 4 unaligned.apk production.apk
