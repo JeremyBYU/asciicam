@@ -33,6 +33,7 @@ app.startCam = function(e) {
                 }
             },
             function successCallback(stream) {
+                //alert("successCallback");
                 if (navigator.getUserMedia == navigator.mozGetUserMedia) {
                     cam.src = stream;
                 } else {
@@ -117,5 +118,3 @@ app.loop = function() {
         line += character;
     }
 };
-
-

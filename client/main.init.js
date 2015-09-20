@@ -16,7 +16,7 @@ if (Meteor.isCordova) {
 
 function onDeviceReady() {
     sideBarInit();
-    app.initPhoto();
+    app.init();
 
 }
 
